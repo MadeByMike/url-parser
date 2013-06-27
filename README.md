@@ -1,5 +1,5 @@
 # URL Parser
-I know there are a few different examples of these out in the wild but none I could fine were as simple as this.
+I know there are a few different examples of these out in the wild but none I could find were as simple as this.
 ## Initialise a new URL Parser object
 Initialise a new URL Parser object. 
 ```javascript
@@ -84,6 +84,13 @@ Set or retrieve the directory
 example = URL("http://example.com/path/to/page.html");
 example.directory(); // Returns "/path/to/"
 example.directory("/new/path/"); // Set directory, new URL http://example.com/new/path/page.html
+```
+## .cd (directory) 
+Change the directory terminal style. Rather than replace the directory this function will allow you to manipulate the directory wih a familiar syntax
+```javascript
+example = URL("http://example.com/one/two/three/four/five/index.html");
+example.cd("../../new"); // Change directory, new url http://example.com/one/two/three/new/index.html
+example.cd("./new/"); // Change directory, new url http://example.com/one/two/three/new/new/index.html 
 ```
 ## .filename ([filename]) 
 Set or retrieve the filename
@@ -187,13 +194,6 @@ Normalise a url or path string
 example = URL();
 example.normalizePath("http://example.com/redundant/../path/./index.html"); // Returns "http:/example.com/path/index.html"
 example.normalizePath("/redundant/../path/./"); // Returns "/path/"
-```
-## .cd (directory) 
-Change the directory terminal style. Rather than replace the directory this function will allow you to manipulate the directory wih a familiar syntax
-```javascript
-example = URL("http://example.com/one/two/three/four/five/index.html");
-example.cd("../../new"); // Change directory, new url http://example.com/one/two/three/new/index.html
-example.cd("./new/"); // Change directory, new url http://example.com/one/two/three/new/new/index.html 
 ```
 ## .setBase ([base]) 
 Make a url relative to a new base.
