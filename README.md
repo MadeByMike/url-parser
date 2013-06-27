@@ -117,16 +117,18 @@ example.query("query2"); // Retrieve value of "query2", Returns "2"
 ```
 ## .addQuery (queryObject) 
 Add one or more items to the query string
+```javascript
 example = URL("http://example.com?query=1");
 example.addQuery({query2: 2, query3: 3}); // Add 2 items to the query string, new URL http://example.com?query=1&query2=2&query3=3
 example.addQuery({query3: 0}); // Will replace query3, new URL http://example.com?query=1&query2=2&query3=0
-
+```
 ## .removeQuery (name,[index]) 
-Set or retrieve the 
+Remove a specific item from the query
+```javascript
 example = URL("http://example.com?query=1&array[]=1&array[]=2");
 example.removeQuery("query"); // Remove "query", new URL http://example.com?array[]=1&array[]=2
 example.removeQuery("array", 1); // Remove the 2nd index of "array", new URL http://example.com?array=1
-
+```
 ## .fragment ([fragment]) 
 Set or retrieve the fragment
 ```javascript
