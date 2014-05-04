@@ -230,7 +230,7 @@
 		};
 		/** parse() */
 		this.parse = function(set) {
-			return this.src(set);
+			return this.src(set).getParts();
 		}
 		/** url() */
 		this.url = function() {
