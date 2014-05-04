@@ -1,4 +1,4 @@
-(function(window){
+(function(glob){
 	"use strict";
 	var URL;
 	URL = function(url){
@@ -499,6 +499,13 @@
 		return false;
 	//Fin
 	};
-	window.URL = URL; 
-	return URL;
-})(window);
+
+	// Publish existence of object
+	if (typeof module !== "undefined" && module.exports) {
+		module.exports = URL;
+	} else if (typeof define !== "undefined") {
+		 define([], function() { return URL; });
+	} else {
+		glob.URL = URL;
+	}
+})(this);
