@@ -228,6 +228,10 @@
 			} 
 			return false;
 		};
+		/** parse() */
+		this.parse = function(set) {
+			return this.src(set);
+		}
 		/** url() */
 		this.url = function() {
 			return this.computed;
