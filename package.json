@@ -1,6 +1,6 @@
 {
 	"name" : "url-parser",
-	"version" : "1.0.0",
+	"version" : "1.1.0",
 	"description" : "A URL parsing library for JavaScript.",
 	"homepage" : "https://github.com/MadeByMike/url-parser",
 	"author" : "Mike Riethmuller <mike@madebymike.com.au>",
