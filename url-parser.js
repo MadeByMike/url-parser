@@ -1,9 +1,9 @@
 (function(glob){
 	"use strict";
-	var URL;
-	URL = function(url){
-		if (!(this instanceof URL)) {
-			return new URL(url);
+	var URI;
+	URI = function(url){
+		if (!(this instanceof URI)) {
+			return new URI(url);
 		}
 		if (url === undefined) {
 			if (location !== undefined) {
@@ -430,7 +430,7 @@
 			var equal = true;
 
 			if (typeof url === 'string') {
-				url = new URL(url);
+				url = new URI(url);
 			}
 			if (url === undefined) {
 				return false;
@@ -457,10 +457,10 @@
 		/** setBase() */
 		this.setBase = function(base) {
 			if (base === undefined) {
-				base = new URL(location.href);
+				base = new URI(location.href);
 			}
 			if (typeof base === 'string') {
-				base = new URL(base);
+				base = new URI(base);
 			}
 			parts.protocol = base.protocol();
 			parts.userinfo = base.userinfo();
@@ -476,7 +476,7 @@
 				url = this;
 			}
 			if (typeof url === 'string') {
-				url = new URL(url);
+				url = new URI(url);
 			}
 			return !(url.hostname());
 		};
@@ -502,10 +502,10 @@
 
 	// Publish existence of object
 	if (typeof module !== "undefined" && module.exports) {
-		module.exports = URL;
+		module.exports = URI;
 	} else if (typeof define !== "undefined") {
-		 define([], function() { return URL; });
+		 define([], function() { return URI; });
 	} else {
-		glob.URL = URL;
+		glob.URI = URI;
 	}
 })(this);
