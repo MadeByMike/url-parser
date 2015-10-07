@@ -162,11 +162,11 @@ example2 = URI("http://example.com/path/to/file/index.html");
 example.isEqual("/path/to/file/index.html"); // Returns true
 example.isEqual("http://example.com/redundant/../path/to/file/index.html"); // Returns true, same location
 example.isEqual(example2); // Returns true
-// Strict comparison will only all absolute with absolute and relative with relative comparision
+// Strict comparison will only all absolute with absolute and relative with relative comparison
 example.isEqual("/path/to/file/index.html", true); // Returns false
 example.isEqual("http://example.com/path/to/file/index.html", true); Returns true
 example.isEqual("http://example.com/redundant/../path/to/file/index.html"); // Returns true, same location
-// includeQuery will factor the query string into the comparision
+// includeQuery will factor the query string into the comparison
 example = URI("http://example.com/path/to/file/index.html?query=1&query2=2");
 example.isEqual("/path/to/file/index.html", false, true); // Returns false
 example.isEqual("/path/to/file/index.html?query2=2&query=1", false, true); // Returns true, query order doesn"t matter
